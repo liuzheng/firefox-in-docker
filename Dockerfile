@@ -10,8 +10,8 @@ RUN apt-get update \
     supervisor \
     ttf-wqy-microhei \
     wget software-properties-common \
-    add-apt-repository -y ppa:ubuntu-mozilla-security/ppa \
-    apt-get update \
+    && add-apt-repository -y ppa:ubuntu-mozilla-security/ppa \
+    && apt-get update \
     && apt-get install -y firefox \
     && rm -rf /var/lib/apt/lists/* 
 
