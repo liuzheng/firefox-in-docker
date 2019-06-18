@@ -9,10 +9,10 @@ RUN apt-get update \
     sudo \
     supervisor \
     ttf-wqy-microhei \
-    wget \
-    && add-apt-repository ppa:ubuntu-mozilla-security/ppa
-    || apt-get update \
-    && apt --fix-broken install -y \
+    wget software-properties-common \
+    add-apt-repository -y ppa:ubuntu-mozilla-security/ppa \
+    apt-get update \
+    && apt-get install -y firefox \
     && rm -rf /var/lib/apt/lists/* 
 
 RUN set -xe \
